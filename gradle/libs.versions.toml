@@ -1,0 +1,72 @@
+[versions]
+springBootVersion = "4.0.1"
+archunitVersion = "1.4.1"
+mapstruct = "1.6.3"
+flyway = "11.20.2"
+testContainersVersion = "1.21.4"
+jacksonDatabindNullable = "0.2.6"
+swaggerAnnotationsV3 = "2.2.41"
+
+[libraries]
+springBootDependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBootVersion" }
+springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web" }
+springBootStarterValidation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test" }
+springBootStarterWebMvcTest = { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
+springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+springBootStarterDataJdbc = { module = "org.springframework.boot:spring-boot-starter-data-jdbc" }
+springTransaction = { module = "org.springframework:spring-tx" }
+springDataJdbc = { module = "org.springframework.data:spring-data-jdbc" }
+springContext = { module = "org.springframework:spring-context" }
+springWeb = { module = "org.springframework:spring-web" }
+swaggerAnnotationsV3 = { module = "io.swagger.core.v3:swagger-annotations", version.ref = "swaggerAnnotationsV3" }
+jacksonDatabindNullable = { module = "org.openapitools:jackson-databind-nullable", version.ref = "jacksonDatabindNullable" }
+commonsLang3 = { module = "org.apache.commons:commons-lang3", version = "3.20.0" }
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
+lombok = { module = "org.projectlombok:lombok", version = "1.18.42" }
+postgresql = { module = "org.postgresql:postgresql", version = "42.7.9" }
+flywayPostgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+flywayStarter = { module = "org.springframework.boot:spring-boot-starter-flyway", version.ref = "springBootVersion" }
+jakartaServletApi = { module = "jakarta.servlet:jakarta.servlet-api", version = "6.1.0" }
+jakartaAnnotationApi = { module = "jakarta.annotation:jakarta.annotation-api", version = "3.0.0" }
+
+# Test dependencies
+mockitoCore = { module = "org.mockito:mockito-core" }
+jupiterApi = { module = "org.junit.jupiter:junit-jupiter-api" }
+jupiterParams = { module = "org.junit.jupiter:junit-jupiter-params" }
+jupiterEngine = { module = "org.junit.jupiter:junit-jupiter-engine" }
+mockitoJunitJupiter = { module = "org.mockito:mockito-junit-jupiter" }
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher" }
+archunitJunit5 = { module = "com.tngtech.archunit:archunit-junit5", version.ref = "archunitVersion" }
+
+# Test dependencies for integration tests
+testContainers = { module = "org.testcontainers:junit-jupiter", version.ref = "testContainersVersion" }
+testContainersPostgresql = { module = "org.testcontainers:postgresql", version.ref = "testContainersVersion" }
+springTestContainer = { module = "org.springframework.boot:spring-boot-testcontainers"}
+
+[bundles]
+unitTest = [
+    "jupiterApi",
+    "mockitoCore",
+    "jupiterParams",
+    "jupiterEngine",
+    "mockitoJunitJupiter",
+    "junitPlatformLauncher"
+]
+postgresIntegrationTest = [
+    "testContainers",
+    "springDataJdbc",
+    "springTestContainer",
+    "springBootStarterTest",
+    "testContainersPostgresql"
+]
+flyway = ["flywayPostgresql", "flywayStarter"]
+
+[plugins]
+java = { id = "java" }
+mavenPublish = { id = "maven-publish" }
+springBoot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+openapiGenerator = { id = "org.openapi.generator", version = "7.10.0" }
+jib = { id = "com.google.cloud.tools.jib", version = "3.5.2" }
+moduleGraphAssert = { id = "com.jraska.module.graph.assertion", version = "2.9.0" }

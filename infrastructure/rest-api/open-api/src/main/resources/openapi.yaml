@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Automation Secret API
+  description: Automation Secret OpenAPI specification
+  version: 0.0.1-SNAPSHOT
+paths:
+  /api/settings:
+    get:
+      tags:
+        - settings
+      summary: Get settings fot automated tests
+      description: Returns a list of key-value settings.
+      operationId: getSettings
+      responses:
+        "200":
+          description: Settings retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Settings'
+        "500":
+          description: Failed to retrieve settings
+
+  /api/test-user:
+    get:
+      tags:
+        - test-user
+      summary: Lock a test user
+      operationId: getAndLockUser
+      responses:
+        "200":
+          description: User successfully locked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestUser'
+        "404":
+          description: No unlocked test user available
+
+  /api/test-user/release/{userId}:
+    post:
+      tags:
+        - test-user
+      summary: Release a locked user
+      operationId: releaseUser
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the user to release
+      responses:
+        "200":
+          description: User successfully released
+        "500":
+          description: Failed to release user
+
+components:
+  schemas:
+    Settings:
+      $ref: './schemas/Settings.yaml'
+    TestUser:
+      $ref: './schemas/TestUser.yaml'

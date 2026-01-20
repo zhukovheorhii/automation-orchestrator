@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS settings
+(
+    id    BIGSERIAL PRIMARY KEY,
+    key   VARCHAR NOT NULL UNIQUE,
+    value VARCHAR NOT NULL
+);

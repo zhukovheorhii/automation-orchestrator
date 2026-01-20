@@ -1,0 +1,15 @@
+services:
+
+  postgres:
+    image: postgres:17.1
+
+    container_name: secret_db
+    ports:
+      - "5432:5432"
+    restart: no
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: secret_db
+      TZ: Europe/Kyiv
+      PGTZ: Europe/Kyiv

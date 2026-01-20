@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: automation-secret
+  profiles:
+    active: default,local
+  config:
+    import: "optional:configserver:"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/secret_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    default-schema: public
+    locations: classpath:db/migrations
+    ignore-migration-patterns: "*:missing,*:future"
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+server:
+  port: 8080
+management:
+  server:
+    port: 9000
+  endpoints:
+    web:
+      exposure:
+        include: health,loggers,prometheus,threaddump
+      base-path: /
+      path-mapping:
+        prometheus: metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    readinessState:
+      enabled: true
+    livenessState:
+      enabled: true
+
+scheduler:
+  test-user-cleanup:
+    ttl: PT20M
+

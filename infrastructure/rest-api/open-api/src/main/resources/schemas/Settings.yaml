@@ -1,0 +1,13 @@
+type: object
+properties:
+  settings:
+    type: object
+    additionalProperties:
+      type: string
+    description: Key-value pairs of automated tests settings
+required:
+  - settings
+example:
+  settings:
+    "settingName1": "settingValue1"
+    "settingName2": "settingValue2"

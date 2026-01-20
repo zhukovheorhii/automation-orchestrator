@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <option name="ACTIVE_PROFILES" />
+    <module name="automation-secret.infrastructure.application.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.automation.secret.Application" />
+    <option name="VM_PARAMETERS" value="-Duser.timezone=Europe/Kyiv" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
+
