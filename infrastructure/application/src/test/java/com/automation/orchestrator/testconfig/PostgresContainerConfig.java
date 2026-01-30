@@ -22,7 +22,7 @@ public class PostgresContainerConfig {
     protected static final PostgreSQLContainer<?> POSTGRES = new PostgreSQLContainer<>(
         parse("postgres:17.4"))
         .withNetwork(NETWORK)
-        .withDatabaseName("secret_db")
+        .withDatabaseName("orchestrator_db")
         .withUsername("postgres")
         .withPassword("postgres")
         .withExposedPorts(5432)
