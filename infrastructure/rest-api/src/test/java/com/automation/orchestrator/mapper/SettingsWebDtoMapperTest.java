@@ -1,0 +1,23 @@
+package com.automation.secret.mapper;
+
+import com.automation.secret.model.dto.SettingsDto;
+import com.automation.secret.restapi.generated.dto.SettingsWebDto;
+import java.util.Map;
+import org.junit.jupiter.api.Test;
+import org.mapstruct.factory.Mappers;
+
+class SettingsWebDtoMapperTest {
+    private final SettingsWebDtoMapper mapper = Mappers.getMapper(SettingsWebDtoMapper.class);
+
+    @Test
+    void shouldMapSettingsDtoToSettingsWebDto() {
+        var settingsDto = new SettingsDto(
+            Map.of("key1", "value1", "key2", "value2")
+        );
+
+        SettingsWebDto result = mapper.toSettingsWebDto(settingsDto);
+
+        assertThat(result).isNotNull();
+        assertThat(result.getSettings()).isEqualTo(settingsDto.settings());
+    }
+}

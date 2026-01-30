@@ -1,6 +1,6 @@
 spring:
   application:
-    name: automation-secret
+    name: automation-orchestrator
   profiles:
     active: default,local
   config:
@@ -44,4 +44,3 @@ management:
 scheduler:
   test-user-cleanup:
     ttl: PT20M
-

@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "automation-secret"
+rootProject.name = "automation-orchestrator"
 
 include("domain")
 include("infrastructure:application")

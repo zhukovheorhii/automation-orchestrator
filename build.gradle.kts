@@ -13,7 +13,7 @@ allprojects {
 subprojects {
     apply(plugin = "java")
 
-    group = "com.automation.secret"
+    group = "com.automation.orchestrator"
 
     java {
         toolchain {
