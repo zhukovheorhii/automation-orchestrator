@@ -1,4 +1,4 @@
-package com.automation.secret.controller;
+package com.automation.orchestrator.controller;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
@@ -10,12 +10,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.automation.secret.advice.ControllerAdvise;
-import com.automation.secret.exception.NoTestUserAvailableException;
-import com.automation.secret.mapper.TestUserWebDtoMapper;
-import com.automation.secret.model.dto.TestUserDto;
-import com.automation.secret.port.input.testuser.TestUserService;
-import com.automation.secret.restapi.generated.dto.TestUserWebDto;
+import com.automation.orchestrator.advice.ControllerAdvise;
+import com.automation.orchestrator.exception.NoTestUserAvailableException;
+import com.automation.orchestrator.mapper.TestUserWebDtoMapper;
+import com.automation.orchestrator.model.dto.TestUserDto;
+import com.automation.orchestrator.port.input.testuser.TestUserService;
+import com.automation.orchestrator.restapi.generated.dto.TestUserWebDto;
 import java.time.Instant;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,10 @@
-package com.automation.secret.advice;
+package com.automation.orchestrator.advice;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.automation.secret.exception.NoTestUserAvailableException;
+import com.automation.orchestrator.exception.NoTestUserAvailableException;
 import org.junit.jupiter.api.Test;
 
 class ControllerAdviseTest {

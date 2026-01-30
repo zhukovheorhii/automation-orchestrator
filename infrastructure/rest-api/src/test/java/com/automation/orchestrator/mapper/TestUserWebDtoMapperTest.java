@@ -1,7 +1,9 @@
-package com.automation.secret.mapper;
+package com.automation.orchestrator.mapper;
 
-import com.automation.secret.model.dto.TestUserDto;
-import com.automation.secret.restapi.generated.dto.TestUserWebDto;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import com.automation.orchestrator.model.dto.TestUserDto;
+import com.automation.orchestrator.restapi.generated.dto.TestUserWebDto;
 import java.time.Instant;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
