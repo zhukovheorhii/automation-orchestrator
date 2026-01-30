@@ -1,14 +1,14 @@
-package com.automation.secret.storage;
+package com.automation.orchestrator.storage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.automation.secret.model.SettingsEntity;
-import com.automation.secret.model.dto.SettingsDto;
-import com.automation.secret.repository.SettingsRepository;
-import com.automation.secret.storage.mapper.SettingsMapper;
+import com.automation.orchestrator.model.SettingsEntity;
+import com.automation.orchestrator.model.dto.SettingsDto;
+import com.automation.orchestrator.repository.SettingsRepository;
+import com.automation.orchestrator.storage.mapper.SettingsMapper;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

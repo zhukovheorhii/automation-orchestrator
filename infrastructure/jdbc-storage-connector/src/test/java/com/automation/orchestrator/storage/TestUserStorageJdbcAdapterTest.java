@@ -1,4 +1,4 @@
-package com.automation.secret.storage;
+package com.automation.orchestrator.storage;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,11 +8,11 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
-import com.automation.secret.exception.NoTestUserAvailableException;
-import com.automation.secret.model.TestUserEntity;
-import com.automation.secret.model.dto.TestUserDto;
-import com.automation.secret.repository.TestUserEntityRepository;
-import com.automation.secret.storage.mapper.TestUserMapper;
+import com.automation.orchestrator.exception.NoTestUserAvailableException;
+import com.automation.orchestrator.model.TestUserEntity;
+import com.automation.orchestrator.model.dto.TestUserDto;
+import com.automation.orchestrator.repository.TestUserEntityRepository;
+import com.automation.orchestrator.storage.mapper.TestUserMapper;
 import java.time.Instant;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
