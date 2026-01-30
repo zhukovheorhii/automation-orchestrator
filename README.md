@@ -1,6 +1,6 @@
 # Automation Secret
 
-Service responsible for sharing secrets across instances of automation test runners.
+Service responsible for orchestrating data across instances of automation test runners.
 
 ## Overview
 
@@ -96,7 +96,7 @@ Generate coverage report:
 The service uses Spring Boot configuration with profiles. Default configuration is in `infrastructure/application/src/main/resources/application.yml`.
 
 Key configuration properties:
-- **Database**: PostgreSQL connection (default: localhost:5432/secret_db)
+- **Database**: PostgreSQL connection (default: localhost:5432/orchestrator_db)
 - **Scheduler**: Test user cleanup TTL (default: 20 minutes)
 - **Logging**: Configured via commons-logging library
 
