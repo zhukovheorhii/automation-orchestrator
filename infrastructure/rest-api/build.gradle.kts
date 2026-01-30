@@ -32,8 +32,8 @@ openApiGenerate {
     generatorName.set("spring")
     inputSpec.set("$projectDir/open-api/src/main/resources/openapi.yaml")
     outputDir.set("${layout.buildDirectory.get()}/generated-src")
-    apiPackage.set("com.automation.secret.restapi.generated.api")
-    modelPackage.set("com.automation.secret.restapi.generated.dto")
+    apiPackage.set("com.automation.orchestrator.restapi.generated.api")
+    modelPackage.set("com.automation.orchestrator.restapi.generated.dto")
     modelNameSuffix.set("WebDto")
     configOptions.set(mapOf(
         "useSpringBoot3" to "true",
