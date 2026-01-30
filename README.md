@@ -1,4 +1,4 @@
-# Automation Secret
+# Automation Orchestrator Service
 
 Service responsible for orchestrating data across instances of automation test runners.
 

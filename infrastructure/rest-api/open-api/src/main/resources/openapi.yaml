@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Automation Secret API
-  description: Automation Secret OpenAPI specification
+  title: Automation Orchestrator API
+  description: Automation Orchestrator OpenAPI specification
   version: 0.0.1-SNAPSHOT
 paths:
   /api/settings:
